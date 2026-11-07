@@ -1,4 +1,4 @@
-
+import "./App.css";
 import tasks from "./tasks.json";
 import TaskList from "./components/TaskList";
 
