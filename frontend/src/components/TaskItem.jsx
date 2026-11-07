@@ -3,6 +3,9 @@ import styled from "styled-components";
 
 const StyledCard = styled.li`
   display: flex;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
@@ -24,6 +27,8 @@ const StyledCard = styled.li`
 
   span:first-child {
     flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
     text-decoration: ${({ $completed }) =>
       $completed ? "line-through" : "none"};
     opacity: ${({ $completed }) => ($completed ? 0.6 : 1)};
@@ -43,6 +48,7 @@ const StyledCard = styled.li`
 function TaskItem({ task }) {
   return (
     <StyledCard
+      className="task-card"
       $priority={task.priority}
       $completed={task.completed}
     >
